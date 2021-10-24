@@ -29,7 +29,17 @@ RSpec.describe VehicleImportsController, type: :controller do
           }
         }
 
-        expect(response.status).to eq(204)
+        expect(response.status).to eq(302)
+      end
+
+      it 'returns to vehicles index page' do
+        post :create, params: {
+          vehicle_import: {
+            import_file: upload_file
+          }
+        }
+
+        expect(response).to redirect_to(vehicles_path)
       end
     end 
   end

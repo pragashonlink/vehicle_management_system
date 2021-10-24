@@ -9,7 +9,7 @@ class VehicleImportsController < ApplicationController
     if !@vehicle_import.save
       render :new
     else
-      puts "done"
+      redirect_to vehicles_path
     end
   end
 
