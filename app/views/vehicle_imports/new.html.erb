@@ -1,0 +1,6 @@
+<%= form_for @vehicle_import, :html => { :multipart => true }  do |f| %>
+  <%= f.label :import_file %>
+  <%= f.file_field :import_file %>
+
+  <%= f.button :submit %>
+<% end %>
