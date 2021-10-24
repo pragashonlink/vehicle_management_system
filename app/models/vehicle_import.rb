@@ -8,9 +8,11 @@ class VehicleImport
   validates :import_file, presence: true
 
   def save
-    vehicles = []
+    return false if !valid?
 
     converter = lambda { |header| header.underscore.to_sym }
+
+    vehicles = []
     CSV.foreach(import_file.path, headers: true, header_converters: converter) do |csv_row|
       row = csv_row.to_hash
 

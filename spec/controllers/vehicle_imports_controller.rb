@@ -12,7 +12,17 @@ RSpec.describe VehicleImportsController, type: :controller do
     end 
 
     describe '#create ' do 
-      it 'redirects to vehicles page' do
+      it 'renders error' do
+        post :create, params: {
+          vehicle_import: {
+            import_file: nil
+          }
+        }
+
+        expect(@controller.view_assigns["vehicle_import"].errors.empty?).to eq(false)
+      end
+
+      it 'returns success status' do
         post :create, params: {
           vehicle_import: {
             import_file: upload_file
