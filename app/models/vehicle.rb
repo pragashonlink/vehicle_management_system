@@ -1,6 +1,7 @@
 class Vehicle < ApplicationRecord
 
-  scope :group_customers_by_nationality, -> {  }
+  scope :group_customers_by_nationality, -> { group(:nationality).count(:name) }
+  scope :average_odometer_by_nationality, -> { group(:nationality).average(:odometer_reading) }
 
   def self.search(search_text)
     if search_text.blank?

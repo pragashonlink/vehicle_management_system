@@ -28,4 +28,7 @@ RSpec.describe Vehicle, :type => :model do
     customers_by_nationality = Vehicle.group_customers_by_nationality
   end
 
+  it 'it returns average odometer by nationality' do
+    average_odometer_by_nationality = Vehicle.average_odometer_by_nationality
+  end
 end
