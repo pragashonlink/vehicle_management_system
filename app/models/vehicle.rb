@@ -1,4 +1,7 @@
 class Vehicle < ApplicationRecord
+
+  scope :group_customers_by_nationality, -> {  }
+
   def self.search(search_text)
     if search_text.blank?
       all

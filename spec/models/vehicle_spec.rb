@@ -23,4 +23,9 @@ RSpec.describe Vehicle, :type => :model do
     expect(vehicles.count).to eq(1)
     expect(vehicles[0].model).to eq('xyz')
   end
+
+  it 'it returns number of customers by nationality' do
+    customers_by_nationality = Vehicle.group_customers_by_nationality
+  end
+
 end
