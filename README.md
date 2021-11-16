@@ -1,4 +1,4 @@
 # Upload CSV file
-Rails 6
-Rspec
-TDD
+- Rails 6
+- Rspec
+- TDD
